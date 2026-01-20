@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code Quiz 🚀</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- START SCREEN -->
+  <div id="start-screen" class="card">
+    <h1>Code Quiz 🚀</h1>
+    <p class="subtitle">Select a topic to begin</p>
+
+    <div class="topics">
+      <button onclick="startQuiz('html')">HTML</button>
+      <button onclick="startQuiz('css')">CSS</button>
+      <button onclick="startQuiz('java')">JAVA</button>
+      <button onclick="startQuiz('python')">PYTHON</button>
+    </div>
+  </div>
+
+  <!-- QUIZ SCREEN -->
+  <div id="quiz-screen" class="card hidden">
+    <div class="quiz-top">
+      <span id="timer">⏱ 15</span>
+    </div>
+
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <p id="feedback"></p>
+
+    <button id="next-btn" onclick="nextQuestion()">Next</button>
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div id="result-screen" class="card hidden">
+    <div class="trophy">🏆</div>
+    <h2>Quiz Completed</h2>
+    <p id="score-text"></p>
+    <button onclick="goBack()">Back to Topics</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

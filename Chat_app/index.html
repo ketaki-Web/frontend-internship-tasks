@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>React WebSocket Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- React CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+
+    function ChatApp() {
+      const [messages, setMessages] = useState(
+        JSON.parse(localStorage.getItem("chatMessages")) || []
+      );
+      const [input, setInput] = useState("");
+      const ws = useRef(null);
+
+      useEffect(() => {
+        ws.current = new WebSocket("wss://echo.websocket.events");
+
+        ws.current.onmessage = (event) => {
+          const msg = {
+            sender: "Bot",
+            text: event.data,
+            time: new Date().toLocaleTimeString([], {
+              hour: "2-digit",
+              minute: "2-digit"
+            }),
+            type: "received"
+          };
+          setMessages(prev => [...prev, msg]);
+        };
+
+        return () => ws.current.close();
+      }, []);
+
+      useEffect(() => {
+        localStorage.setItem("chatMessages", JSON.stringify(messages));
+      }, [messages]);
+
+      const sendMessage = () => {
+        if (!input.trim()) return;
+
+        const msg = {
+          sender: "You",
+          text: input,
+          time: new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit"
+          }),
+          type: "sent"
+        };
+
+        ws.current.send(input);
+        setMessages(prev => [...prev, msg]);
+        setInput("");
+      };
+
+      const clearChat = () => {
+        if (confirm("Clear entire chat?")) {
+          setMessages([]);
+          localStorage.removeItem("chatMessages");
+        }
+      };
+
+      return (
+        <div className="chat-container">
+          <div className="chat-header">
+            <div className="left">
+              <div className="avatar">
+  <img src="avatar.jpg" alt="profile" />
+</div>
+
+              <div>
+                <h3>Eva</h3>
+                <p className="status">Online</p>
+              </div>
+            </div>
+            <button className="clear-btn" onClick={clearChat}>Clear</button>
+          </div>
+
+          <div className="chat-messages">
+            {messages.map((msg, i) => (
+              <div key={i} className={`message ${msg.type}`}>
+                <div className="sender">{msg.sender}</div>
+                <div>{msg.text}</div>
+                <div className="time">{msg.time}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="chat-input">
+            <input
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              onKeyDown={e => e.key === "Enter" && sendMessage()}
+              placeholder="Type a message..."
+            />
+            <button onClick={sendMessage}>Send</button>
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<ChatApp />);
+  </script>
+</body>
+</html>

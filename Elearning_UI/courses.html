@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learnify | Courses</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+  <h2 class="brand">Learnify</h2>
+
+  <nav class="nav-menu">
+    <a href="index.html" class="active">
+      <span class="nav-icon">🏠</span>
+      <span>Dashboard</span>
+    </a>
+    <a href="courses.html">
+      <span class="nav-icon">📚</span>
+      <span>Courses</span>
+    </a>
+    <a href="notes.html">
+      <span class="nav-icon">📝</span>
+      <span>Notes</span>
+    </a>
+    <a href="profile.html">
+      <span class="nav-icon">👤</span>
+      <span>Profile</span>
+    </a>
+  </nav>
+
+  <!-- Bottom Section -->
+  <div class="sidebar-footer">
+    <div class="sidebar-user">
+      <div class="sidebar-avatar">L</div>
+      <div>
+        <p class="user-name">Learnify</p>
+        <span class="user-role">E-Learning Platform</span>
+      </div>
+    </div>
+
+    <button class="settings-btn" title="Settings">
+      ⚙️
+    </button>
+  </div>
+</aside>
+
+
+  <!-- Main -->
+  <main class="main">
+
+    <div class="page-header">
+      <h1>My Courses</h1>
+      <p class="subtitle">Explore and continue your learning</p>
+    </div>
+
+    <div class="courses-grid">
+
+      <!-- Course Card -->
+      <div class="course-card-large">
+        <div class="course-info">
+          <h3>Frontend Development</h3>
+          <p>
+            Learn how to build responsive, interactive websites using
+            HTML, CSS, and JavaScript.
+          </p>
+
+          <div class="course-meta">
+            <span>🟢 Beginner</span>
+            <span>⏱ 6 Weeks</span>
+          </div>
+        </div>
+
+        <div class="course-action">
+          <div class="progress-bar">
+            <div class="progress" style="width: 60%"></div>
+          </div>
+          <span class="progress-text">60% completed</span>
+          <a href="course.html?course=frontend" class="btn">Continue</a>
+        </div>
+      </div>
+
+      <!-- Course Card -->
+      <div class="course-card-large">
+        <div class="course-info">
+          <h3>UI / UX Design</h3>
+          <p>
+            Understand design thinking, wireframing, usability principles,
+            and user-centered design.
+          </p>
+
+          <div class="course-meta">
+            <span>🟡 Intermediate</span>
+            <span>⏱ 4 Weeks</span>
+          </div>
+        </div>
+
+        <div class="course-action">
+          <div class="progress-bar">
+            <div class="progress" style="width: 30%"></div>
+          </div>
+          <span class="progress-text">30% completed</span>
+          <a href="course.html?course=uiux" class="btn">Continue</a>
+        </div>
+      </div>
+
+      <!-- Course Card -->
+      <div class="course-card-large">
+        <div class="course-info">
+          <h3>Backend Development</h3>
+          <p>
+            Learn server-side development, APIs, authentication basics,
+            and backend workflows.
+          </p>
+
+          <div class="course-meta">
+            <span>🟡 Intermediate</span>
+            <span>⏱ 5 Weeks</span>
+          </div>
+        </div>
+
+        <div class="course-action">
+          <div class="progress-bar">
+            <div class="progress" style="width: 0%"></div>
+          </div>
+          <span class="progress-text">Not started</span>
+          <a href="course.html?course=backend" class="btn">Start Course</a>
+        </div>
+      </div>
+
+      <!-- Course Card -->
+      <div class="course-card-large">
+        <div class="course-info">
+          <h3>Full Stack Development</h3>
+          <p>
+            Combine frontend and backend skills to build complete
+            end-to-end web applications.
+          </p>
+
+          <div class="course-meta">
+            <span>🔴 Advanced</span>
+            <span>⏱ 8 Weeks</span>
+          </div>
+        </div>
+
+        <div class="course-action">
+          <div class="progress-bar">
+            <div class="progress" style="width: 0%"></div>
+          </div>
+          <span class="progress-text">Not started</span>
+          <a href="course.html?course=fullstack" class="btn">Start Course</a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

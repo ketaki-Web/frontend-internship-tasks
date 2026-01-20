@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learnify | Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+  <h2 class="brand">Learnify</h2>
+
+  <nav class="nav-menu">
+    <a href="index.html" class="active">
+      <span class="nav-icon">🏠</span>
+      <span>Dashboard</span>
+    </a>
+    <a href="courses.html">
+      <span class="nav-icon">📚</span>
+      <span>Courses</span>
+    </a>
+    <a href="notes.html">
+      <span class="nav-icon">📝</span>
+      <span>Notes</span>
+    </a>
+    <a href="profile.html">
+      <span class="nav-icon">👤</span>
+      <span>Profile</span>
+    </a>
+  </nav>
+
+  <!-- Bottom Section -->
+  <div class="sidebar-footer">
+    <div class="sidebar-user">
+      <div class="sidebar-avatar">L</div>
+      <div>
+        <p class="user-name">Learnify</p>
+        <span class="user-role">E-Learning Platform</span>
+      </div>
+    </div>
+
+    <button class="settings-btn" title="Settings">
+      ⚙️
+    </button>
+  </div>
+</aside>
+
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Header -->
+    <div class="dashboard-header">
+      <div>
+        <h1>Dashboard</h1>
+        <p class="subtitle">Overview of your learning activity</p>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Courses</h3>
+        <p class="stat-number">6</p>
+        <span>Total enrolled</span>
+      </div>
+
+      <div class="stat-card">
+        <h3>In Progress</h3>
+        <p class="stat-number">3</p>
+        <span>Currently learning</span>
+      </div>
+
+      <div class="stat-card">
+        <h3>Completed</h3>
+        <p class="stat-number">1</p>
+        <span>Finished courses</span>
+      </div>
+    </div>
+
+    <!-- Continue Learning -->
+    <div class="section-block">
+      <h2>Continue Learning</h2>
+
+      <div class="continue-card">
+        <div class="continue-info">
+          <h3>Frontend Development</h3>
+          <p>HTML, CSS, JavaScript fundamentals</p>
+        </div>
+
+        <div class="continue-action">
+          <div class="progress-bar">
+            <div class="progress" style="width: 60%"></div>
+          </div>
+          <span class="progress-text">60% completed</span>
+          <button class="btn">Resume</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

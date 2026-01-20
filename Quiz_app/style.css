@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* APP */
+.app {
+  width: 360px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* TEXT */
+h1 {
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* BUTTONS */
+button {
+  width: 100%;
+  padding: 12px;
+  margin: 6px 0;
+  border-radius: 8px;
+  border: none;
+  background: #667eea;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #5a67d8;
+}
+
+/* QUIZ */
+.hidden {
+  display: none;
+}
+
+.quiz-top {
+  text-align: right;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+#options button {
+  background: #edf2ff;
+  color: #333;
+}
+
+#options button:hover {
+  background: #e0e7ff;
+}
+
+#feedback {
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.correct {
+  color: green;
+}
+
+.wrong {
+  color: red;
+}
+
+/* RESULT */
+.trophy {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
